@@ -7,7 +7,7 @@ import (
 	"net"
 	"os"
 
-	pb "github.com/dusk-chancellor/go-grpc-examples"
+	pb "github.com/dusk-chancellor/go-grpc-examples/proto"
 	"google.golang.org/grpc"
 )
 
@@ -26,7 +26,7 @@ func (s *Server) Area(
 	log.Println("Invoked Area:", in)
 
 	return &pb.AreaResponse{
-		result: in.height * in.width,
+		Result: in.Height * in.Width,
 	}, nil
 }
 
@@ -37,7 +37,7 @@ func (s *Server) Perimeter(
 	log.Println("Invoked Perimeter: ", in)
 
 	return &pb.PerimeterResponse{
-		result: 2 * (in.height + in.width),
+		Result: 2 * (in.Height + in.Width),
 	}, nil
 }
 
