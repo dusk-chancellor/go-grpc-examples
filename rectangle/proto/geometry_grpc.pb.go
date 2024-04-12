@@ -23,7 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GeometryServiceClient interface {
 	Area(ctx context.Context, in *RectRequest, opts ...grpc.CallOption) (*AreaResponse, error)
-	Perimeter(ctx context.Context, in *RectRequest, opts ...grpc.CallOption) (*PerimeterResponse, error)
+	Perimeter(ctx context.Context, in *RectRequest, opts ...grpc.CallOption) (*PermiterResponse, error)
 }
 
 type geometryServiceClient struct {
@@ -43,8 +43,8 @@ func (c *geometryServiceClient) Area(ctx context.Context, in *RectRequest, opts 
 	return out, nil
 }
 
-func (c *geometryServiceClient) Perimeter(ctx context.Context, in *RectRequest, opts ...grpc.CallOption) (*PerimeterResponse, error) {
-	out := new(PerimeterResponse)
+func (c *geometryServiceClient) Perimeter(ctx context.Context, in *RectRequest, opts ...grpc.CallOption) (*PermiterResponse, error) {
+	out := new(PermiterResponse)
 	err := c.cc.Invoke(ctx, "/geometry.GeometryService/Perimeter", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -57,7 +57,7 @@ func (c *geometryServiceClient) Perimeter(ctx context.Context, in *RectRequest, 
 // for forward compatibility
 type GeometryServiceServer interface {
 	Area(context.Context, *RectRequest) (*AreaResponse, error)
-	Perimeter(context.Context, *RectRequest) (*PerimeterResponse, error)
+	Perimeter(context.Context, *RectRequest) (*PermiterResponse, error)
 	mustEmbedUnimplementedGeometryServiceServer()
 }
 
@@ -68,7 +68,7 @@ type UnimplementedGeometryServiceServer struct {
 func (UnimplementedGeometryServiceServer) Area(context.Context, *RectRequest) (*AreaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Area not implemented")
 }
-func (UnimplementedGeometryServiceServer) Perimeter(context.Context, *RectRequest) (*PerimeterResponse, error) {
+func (UnimplementedGeometryServiceServer) Perimeter(context.Context, *RectRequest) (*PermiterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Perimeter not implemented")
 }
 func (UnimplementedGeometryServiceServer) mustEmbedUnimplementedGeometryServiceServer() {}
