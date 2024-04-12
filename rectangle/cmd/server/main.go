@@ -19,10 +19,7 @@ func NewServer() *Server {
 	return &Server{}
 }
 
-func (s *Server) Area(
-	ctx context.Context,
-	in *pb.RectRequest,
-) (*pb.AreaResponse, error) {
+func (s *Server) Area(ctx context.Context, in *pb.RectRequest) (*pb.AreaResponse, error) {
 	log.Println("Invoked Area:", in)
 
 	return &pb.AreaResponse{
@@ -30,10 +27,7 @@ func (s *Server) Area(
 	}, nil
 }
 
-func (s *Server) Perimeter(
-	ctx context.Context,
-	in *pb.RectRequest,
-) (*pb.PerimeterResponse, error) {
+func (s *Server) Perimeter(ctx context.Context, in *pb.RectRequest) (*pb.PerimeterResponse, error) {
 	log.Println("Invoked Perimeter: ", in)
 
 	return &pb.PerimeterResponse{

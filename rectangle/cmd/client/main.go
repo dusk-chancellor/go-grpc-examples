@@ -25,8 +25,8 @@ func main() {
 
 	grpcClient := pb.NewGeometryServiceClient(conn)
 	area, err := grpcClient.Area(context.TODO(), &pb.RectRequest{
-		Height: 10,
-		Width:  20,
+		Height: 2,
+		Width:  6,
 	})
 	if err != nil {
 		log.Fatalf("error: %v", err)
@@ -34,8 +34,8 @@ func main() {
 	}
 
 	perim, err := grpcClient.Perimeter(context.TODO(), &pb.RectRequest{
-		Height: 10,
-		Width: 20,
+		Height: 13,
+		Width:  15,
 	})
 	if err != nil {
 		log.Fatalf("error: %v", err)
