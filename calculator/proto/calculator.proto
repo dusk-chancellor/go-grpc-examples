@@ -1,0 +1,15 @@
+syntax = "proto3";
+package geometry;
+option go_package = "github.com/dusk-chancellor/go-grpc-examples/rectangle/proto";
+
+message ExpressionRequest {
+    string expression = 1;
+}
+
+message ExpressionResponse {
+    float result = 1;
+}
+
+service ExpressionService {
+    rpc Calculate (ExpressionRequest) returns (ExpressionResponse);
+}
