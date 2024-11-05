@@ -1,5 +1,0 @@
-version: v1
-name: github.com/dusk-chancellor/sg_implementation
-build:
-  roots:
-    - api
