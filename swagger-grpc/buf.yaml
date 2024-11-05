@@ -1,0 +1,5 @@
+version: v1
+
+name: buf.build/dusk-chancellor/go-grpc-examples
+deps:
+  - buf.build/googleapis/googleapis

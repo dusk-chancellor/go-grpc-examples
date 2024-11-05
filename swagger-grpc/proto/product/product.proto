@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package product;
+
+option go_package = "proto/product";
+
+import "google/api/annotations.proto";
+
+service ProductService {
+    rpc AddProduct(AddProductRequest) returns (AddProductResponse) {
+        option (google.api.http) = {
+            post: "/product"  
+        };
+    }
+    rpc GetProduct(GetProductRequest) returns (GetProductResponse) {
+        option (google.api.http) = {
+            get: "/product"
+        };
+    }
+}
+
+message AddProductRequest {
+    string name = 1;
+    string description = 2;
+    float price = 3;
+}
+
+message AddProductResponse {
+    bool success = 1;
+}
+
+message GetProductRequest {
+    string name = 1;
+}
+
+message GetProductResponse {
+    string name = 1;
+    string description = 2;
+    float price = 3;
+}

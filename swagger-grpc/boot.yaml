@@ -1,0 +1,7 @@
+grpc:
+  - name: swagger-grpc                                # Name of grpc entry
+    port: 50051                                       # Port of grpc entry
+    enabled: true                                     # Enable grpc entry
+    sw:
+      enabled: true                                   # Enable swagger
+      jsonPath: "gen/swagger/"        # Provide swagger config file path
