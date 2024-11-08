@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 
-	"github.com/dusk-chancellor/go-grpc-examples/swagger-grpc/gen/go/proto/product"
-	"github.com/dusk-chancellor/go-grpc-examples/swagger-grpc/gen/go/proto/user"
+	"github.com/dusk-chancellor/go-grpc-examples/swagger-grpc/gen/go/product"
+	"github.com/dusk-chancellor/go-grpc-examples/swagger-grpc/gen/go/user"
 	rkboot "github.com/rookie-ninja/rk-boot"
 	rkgrpc "github.com/rookie-ninja/rk-grpc/boot"
 	"google.golang.org/grpc"

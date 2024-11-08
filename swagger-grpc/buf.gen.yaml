@@ -3,15 +3,18 @@ plugins:
   - name: go
     out: gen/go
     opt: 
-      - paths=source_relative
+      - Mproto/user/user.proto=./user
+      - Mproto/product/product.proto=./product
   - name: go-grpc
     out: gen/go
     opt: 
-      - paths=source_relative
+      - Mproto/user/user.proto=./user
+      - Mproto/product/product.proto=./product
   - name: grpc-gateway
     out: gen/go
     opt: 
-      - paths=source_relative
+      - Mproto/user/user.proto=./user
+      - Mproto/product/product.proto=./product
   - name: openapiv2
     out: gen/swagger
     strategy: all
